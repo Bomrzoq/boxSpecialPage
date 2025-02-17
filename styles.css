@@ -1,0 +1,74 @@
+:root {
+  --background: #f8f8f8;
+  --box-color: rgb(20, 20, 20);
+  --water: rgb(55, 102, 204);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  border: 5px solid var(--box-color);
+  position: relative;
+  outline: 0;
+  overflow: hidden;
+  background-color: var(--water);
+}
+
+.box::after {
+  position: absolute;
+  content: "";
+  height: 200%;
+  width: 200%;
+  bottom: -50%;
+  left: -50%;
+  border-radius: 35%;
+  background: var(--background);
+  animation: rise 7s ease-in-out infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(-100%) rotate(500deg);
+  }
+}
+
+.name {
+  color: black;
+  position: absolute;
+  display: flex;
+  left: 40%;
+  top: 40%;
+  font-size: 3rem;
+  background-color: white;
+  border: 5px solid var(--box-color);
+  outline: 0;
+  overflow: hidden;
+  padding: 10px 10px;
+}
+
+@keyframes innerBox {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(-100%) rotate(500deg);
+  }
+}
